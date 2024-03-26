@@ -1,0 +1,16 @@
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table career_track_info {
+  track_id tinyint [primary key, not null]
+  track_name varchar(250)
+}
+
+Table career_track_student_enrollment {
+student_id int [primary key, not null]
+track_id tinyint [primary key, not null]
+date_enrolled date 
+date_completed date
+}
+
+Ref: career_track_info.track_id > career_track_student_enrollment.track_id // many-to-one
+
